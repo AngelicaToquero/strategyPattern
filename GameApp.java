@@ -1,18 +1,19 @@
 public class GameApp {
     public static void main(String[] args) {
-        // Knight with Sword Attack and Shield Defense
-        Character knight = new Character("Knight", new SwingSword(), new Shield());
+        Character knight = new Knight();
+        Character wizard = new Wizard();
+        Character archer = new Archer();
+
+        System.out.println("Knight:");
         knight.performAttack();
-        knight.performDefend();
+        knight.performDefense();
 
-        // Wizard with Spell Attack and Magic Barrier Defense
-        Character wizard = new Character("Wizard", new CastSpell(), new CreateMagic());
+        System.out.println("\nWizard:");
         wizard.performAttack();
-        wizard.performDefend();
+        wizard.performDefense();
 
-        // Archer with Arrow Attack and Dodge Defense
-        Character archer = new Character("Archer", new ShootArrow(), new Dodge());
+        System.out.println("\nArcher:");
         archer.performAttack();
-        archer.performDefend();
+        archer.performDefense();
     }
 }

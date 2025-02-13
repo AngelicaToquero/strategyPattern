@@ -1,5 +1,6 @@
 public class ShootArrow implements AttackStrategy {
+    @Override
     public void attack() {
-        System.out.println("Archer shoots an arrow!");
+        System.out.println("Shooting an arrow!");
     }
 }

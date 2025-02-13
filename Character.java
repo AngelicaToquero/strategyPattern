@@ -1,28 +1,21 @@
-// Character class with Strategy Pattern applied
-public class Character {
-    private AttackStrategy attackStrategy;
-    private DefenseStrategy defenseStrategy;
-    private String type;
+import java.util.List;  
 
-    public Character(String type, AttackStrategy attackStrategy, DefenseStrategy defenseStrategy) {
-        this.type = type;
+public abstract class Character {
+    protected AttackStrategy attackStrategy;
+    protected List<DefenseStrategy> defenseStrategies; 
+
+    public Character(AttackStrategy attackStrategy, List<DefenseStrategy> defenseStrategies) {
         this.attackStrategy = attackStrategy;
-        this.defenseStrategy = defenseStrategy;
+        this.defenseStrategies = defenseStrategies;
     }
 
     public void performAttack() {
         attackStrategy.attack();
     }
 
-    public void performDefend() {
-        defenseStrategy.defend();
-    }
-
-    public void setAttackStrategy(AttackStrategy attackStrategy) {
-        this.attackStrategy = attackStrategy;
-    }
-
-    public void setDefenseStrategy(DefenseStrategy defenseStrategy) {
-        this.defenseStrategy = defenseStrategy;
+    public void performDefense() {
+        for (DefenseStrategy strategy : defenseStrategies) {
+            strategy.defend();
+        }
     }
 }
