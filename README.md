@@ -51,4 +51,6 @@ public class Character {
         }
     }
 }
+![SoftEng - Page 1](https://github.com/user-attachments/assets/4fcab263-356c-4f9c-bbf4-dca8c1bb1792)
+
 
